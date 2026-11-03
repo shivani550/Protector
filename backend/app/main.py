@@ -26,6 +26,15 @@ async def lifespan(app: FastAPI):
     Path("./data/inbox").mkdir(parents=True, exist_ok=True)
     Path("./data/seed_generated").mkdir(parents=True, exist_ok=True)
 
+    # Ensure database is seeded with 10 patient profiles if empty
+    async with AsyncSessionLocal() as session:
+        from sqlalchemy import func, select
+        from backend.app.models import Patient
+        count = (await session.execute(select(func.count(Patient.id)))).scalar() or 0
+        if count == 0:
+            from scripts.seed import seed_database
+            await seed_database()
+
     # Start background job worker
     worker_task = asyncio.create_task(run_worker_loop())
 
