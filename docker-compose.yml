@@ -1,0 +1,23 @@
+version: "3.8"
+
+services:
+  web:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - ENV=production
+      - PORT=8000
+      - PUBLIC_BASE_URL=http://localhost:8000
+      - DEMO_MODE=true
+      - SEED_ON_BOOT=true
+      - DELIVERY_MODE=mock
+      - LLM_PROVIDER=mock
+      - STORAGE_DIR=/app/storage
+    volumes:
+      - protector_storage:/app/storage
+      - protector_data:/app/data
+
+volumes:
+  protector_storage:
+  protector_data:

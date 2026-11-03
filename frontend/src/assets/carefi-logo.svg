@@ -1,0 +1,15 @@
+<!-- TODO: Replace this placeholder inline SVG with the official Care.fi logo vector asset when provided -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 48" fill="none" class="h-8 w-auto">
+  <!-- Care.fi Icon Symbol -->
+  <rect x="2" y="6" width="36" height="36" rx="10" fill="#644790" />
+  <circle cx="16" cy="20" r="5" fill="#b6a7de" />
+  <path d="M12 32C12 27.5817 15.5817 24 20 24C24.4183 24 28 27.5817 28 32" stroke="#ffffff" stroke-width="3" stroke-linecap="round" />
+  <circle cx="28" cy="16" r="3" fill="#269d72" />
+
+  <!-- Care.fi Wordmark -->
+  <text x="48" y="30" font-family="'Poppins', sans-serif" font-weight="700" font-size="22" fill="#111111" letter-spacing="-0.5">Care<tspan fill="#644790">.fi</tspan></text>
+  
+  <!-- Sibling Locker Pill -->
+  <rect x="126" y="14" width="62" height="20" rx="10" fill="#e4e0f4" />
+  <text x="157" y="28" font-family="'Poppins', sans-serif" font-weight="600" font-size="10.5" fill="#644790" text-anchor="middle" letter-spacing="0.3">LOCKER</text>
+</svg>

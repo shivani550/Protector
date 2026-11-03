@@ -1,0 +1,30 @@
+# Environment & Secrets
+.env
+*.env.local
+
+# Virtual Environment & Python Cache
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Storage & Databases
+storage/
+*.db
+*.sqlite3
+data/seed_generated/*
+!data/seed_generated/expected.json
+data/inbox/*
+reports/
+
+# Frontend Build & Node
+node_modules/
+frontend/node_modules/
+dist/
+.DS_Store
+Thumbs.db

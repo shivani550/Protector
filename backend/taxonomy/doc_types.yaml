@@ -1,0 +1,301 @@
+version: 1
+doc_types:
+  - key: discharge_summary
+    label: Discharge summary
+    aliases:
+      - discharge card
+      - discharge certificate
+      - ds
+      - final summary
+      - hospital discharge summary
+    valid_for_days: null
+    requires_name_match: true
+    per_period: true
+    satisfies: []
+    notes: Document issued upon hospital discharge summarizing treatment and stay.
+
+  - key: final_hospital_bill
+    label: Final hospital bill (itemized)
+    aliases:
+      - final bill
+      - itemized bill
+      - hospital invoice
+      - bill summary
+      - inpatient bill
+    valid_for_days: null
+    requires_name_match: true
+    per_period: true
+    satisfies:
+      - payment_receipts
+    notes: Comprehensive itemized bill with breakdown of bed, doctor, and procedure charges.
+
+  - key: pharmacy_bills
+    label: Pharmacy bills
+    aliases:
+      - medicine bills
+      - chemist invoice
+      - pharmacy cash memo
+      - drug bills
+    valid_for_days: null
+    requires_name_match: true
+    per_period: true
+    satisfies: []
+    notes: Bills and receipts from pharmacy/chemist for prescribed medicines.
+
+  - key: payment_receipts
+    label: Payment receipts
+    aliases:
+      - receipts
+      - payment proof
+      - settlement receipt
+      - money receipt
+    valid_for_days: null
+    requires_name_match: true
+    per_period: true
+    satisfies: []
+    notes: Official receipts showing payment received by hospital or provider.
+
+  - key: lab_reports
+    label: Lab / diagnostic reports
+    aliases:
+      - pathology
+      - blood test
+      - investigation reports
+      - biochemistry report
+      - lab test results
+    valid_for_days: 180
+    requires_name_match: true
+    per_period: true
+    satisfies: []
+    notes: Pathological, biochemical or microbiological laboratory results.
+
+  - key: radiology_reports
+    label: Radiology reports & films
+    aliases:
+      - x-ray
+      - mri
+      - ct scan
+      - ultrasound report
+      - usg report
+      - imaging report
+    valid_for_days: 365
+    requires_name_match: true
+    per_period: true
+    satisfies: []
+    notes: Diagnostic radiology imaging reports.
+
+  - key: prescriptions
+    label: Doctor prescriptions
+    aliases:
+      - opd slip
+      - advice
+      - rx
+      - doctor prescription
+      - treatment advice
+    valid_for_days: 90
+    requires_name_match: true
+    per_period: true
+    satisfies: []
+    notes: Treating doctor's prescription or advice slip.
+
+  - key: doctor_note_treatment
+    label: Doctor's note / treating physician certificate
+    aliases:
+      - certificate of necessity
+      - doctor's letter
+      - treatment justification
+      - medical certificate
+      - justification letter
+    valid_for_days: 180
+    requires_name_match: true
+    per_period: true
+    satisfies: []
+    notes: Treating physician's declaration justifying admission, treatment, or specific therapy.
+
+  - key: operation_notes
+    label: Operation theatre / procedure notes
+    aliases:
+      - ot notes
+      - surgery notes
+      - implant stickers
+      - implant invoice
+      - anaesthesia notes
+    valid_for_days: null
+    requires_name_match: true
+    per_period: true
+    satisfies: []
+    notes: Detailed surgical, anaesthetic or intervention report.
+
+  - key: consultation_papers
+    label: Consultation / admission papers
+    aliases:
+      - indoor case papers
+      - admission note
+      - icp
+      - clinical notes
+      - nursing notes
+    valid_for_days: null
+    requires_name_match: true
+    per_period: true
+    satisfies: []
+    notes: Daily doctor observation sheets, nursing notes and admission record.
+
+  - key: policy_copy
+    label: Insurance policy copy
+    aliases:
+      - policy schedule
+      - policy certificate
+      - e-card
+      - insurance card
+      - health card
+    valid_for_days: 365
+    requires_name_match: true
+    per_period: false
+    satisfies: []
+    notes: Active health insurance schedule or member card.
+
+  - key: previous_policy
+    label: Previous / porting policy
+    aliases:
+      - prior policy
+      - renewal history
+      - portability document
+      - continuity certificate
+    valid_for_days: null
+    requires_name_match: true
+    per_period: false
+    satisfies: []
+    notes: Prior policy copies proving continuous coverage and waiting period credits.
+
+  - key: claim_form
+    label: Claim form (signed)
+    aliases:
+      - part a claim form
+      - part b claim form
+      - reimbursement form
+      - signed claim document
+    valid_for_days: null
+    requires_name_match: true
+    per_period: true
+    satisfies: []
+    notes: Duly filled and signed insurance reimbursement claim application.
+
+  - key: kyc_id
+    label: KYC – identity proof
+    aliases:
+      - aadhaar
+      - pan
+      - passport
+      - voter id
+      - driving licence
+      - id proof
+    valid_for_days: null
+    requires_name_match: true
+    per_period: false
+    satisfies:
+      - kyc_address
+    notes: Government issued photo ID proof (Aadhaar, Passport also satisfy address).
+
+  - key: kyc_address
+    label: KYC – address proof
+    aliases:
+      - utility bill
+      - electricity bill
+      - address proof
+      - rental agreement
+    valid_for_days: 180
+    requires_name_match: true
+    per_period: false
+    satisfies: []
+    notes: Proof of residential address.
+
+  - key: bank_proof
+    label: Bank proof (cancelled cheque / passbook)
+    aliases:
+      - cancelled cheque
+      - passbook copy
+      - neft details
+      - bank statement first page
+      - account proof
+    valid_for_days: null
+    requires_name_match: true
+    per_period: false
+    satisfies: []
+    notes: Validated bank proof showing account number, IFSC code, and claimant name.
+
+  - key: pre_existing_history
+    label: Medical history / past records for pre-existing condition
+    aliases:
+      - old prescriptions
+      - previous admission records
+      - past treatment history
+      - ped records
+      - chronic disease history
+    valid_for_days: null
+    requires_name_match: true
+    per_period: false
+    satisfies: []
+    notes: Past consultation and diagnostic records relating to pre-existing conditions.
+
+  - key: fir_mlc
+    label: FIR / MLC report
+    aliases:
+      - police report
+      - medico-legal certificate
+      - mlc
+      - first information report
+    valid_for_days: null
+    requires_name_match: true
+    per_period: true
+    satisfies: []
+    notes: Required in case of road traffic accidents, trauma, or assault cases.
+
+  - key: employer_cert
+    label: Employer certificate
+    aliases:
+      - group policy employment proof
+      - hr certificate
+      - employee id card
+      - corporate health coverage proof
+    valid_for_days: 365
+    requires_name_match: true
+    per_period: false
+    satisfies: []
+    notes: Certificate from employer verifying active employment for corporate group policy.
+
+  - key: death_certificate
+    label: Death certificate
+    aliases:
+      - municipal death certificate
+      - death summary
+    valid_for_days: null
+    requires_name_match: true
+    per_period: false
+    satisfies: []
+    notes: Official death certificate required for death or fatal injury claims.
+
+  - key: insurer_query_letter
+    label: Insurer query letter
+    aliases:
+      - deficiency letter
+      - additional information request
+      - claim query
+      - insurer letter
+      - query notice
+    valid_for_days: null
+    requires_name_match: false
+    per_period: true
+    satisfies: []
+    notes: Formal letter or notice from the insurer or TPA requesting documents or clarification.
+
+  - key: other
+    label: Other
+    aliases:
+      - miscellaneous
+      - general document
+      - annexure
+    valid_for_days: null
+    requires_name_match: false
+    per_period: false
+    satisfies: []
+    notes: Catch-all category for supporting documentation not classified elsewhere.

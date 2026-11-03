@@ -1,0 +1,280 @@
+{
+  "L01": {
+    "letter_id": "L01",
+    "patient_code": "PT-0001",
+    "claim_ref": "CLM-ST-88190",
+    "insurer_name": "Star Health Insurance",
+    "pdf_file": "data\\seed_generated\\letters\\L01.pdf",
+    "expected_points": [
+      {
+        "ordinal": 1,
+        "normalized_ask": "Provide hospital final itemized bill and doctor's prescription",
+        "point_type": "document_request",
+        "decision": "needs_new_document",
+        "needed_doc_types": [
+          "prescriptions"
+        ],
+        "covered_doc_types": [
+          "final_hospital_bill"
+        ]
+      }
+    ]
+  },
+  "L02": {
+    "letter_id": "L02",
+    "patient_code": "PT-0001",
+    "claim_ref": "CLM-ST-88191",
+    "insurer_name": "Star Health Insurance",
+    "pdf_file": "data\\seed_generated\\letters\\L02.pdf",
+    "expected_points": [
+      {
+        "ordinal": 1,
+        "normalized_ask": "Submit treating physician certificate justifying admission",
+        "point_type": "document_request",
+        "decision": "needs_new_document",
+        "needed_doc_types": [
+          "doctor_note_treatment"
+        ]
+      },
+      {
+        "ordinal": 2,
+        "normalized_ask": "Submit pharmacy bills and receipts",
+        "point_type": "document_request",
+        "decision": "needs_new_document",
+        "needed_doc_types": [
+          "pharmacy_bills"
+        ]
+      },
+      {
+        "ordinal": 3,
+        "normalized_ask": "Submit operation notes and implant invoice",
+        "point_type": "document_request",
+        "decision": "needs_new_document",
+        "needed_doc_types": [
+          "operation_notes"
+        ]
+      }
+    ]
+  },
+  "L03": {
+    "letter_id": "L03",
+    "patient_code": "PT-0002",
+    "claim_ref": "CLM-HE-41092",
+    "insurer_name": "HDFC ERGO General Insurance",
+    "pdf_file": "data\\seed_generated\\letters\\L03.pdf",
+    "expected_points": [
+      {
+        "ordinal": 1,
+        "normalized_ask": "Furnish indoor case papers and admission notes",
+        "point_type": "document_request",
+        "decision": "needs_new_document",
+        "needed_doc_types": [
+          "consultation_papers"
+        ]
+      }
+    ]
+  },
+  "L04": {
+    "letter_id": "L04",
+    "patient_code": "PT-0002",
+    "claim_ref": "CLM-HE-41093",
+    "insurer_name": "HDFC ERGO General Insurance",
+    "pdf_file": "data\\seed_generated\\letters\\L04.pdf",
+    "expected_points": [
+      {
+        "ordinal": 1,
+        "normalized_ask": "Submit discharge card, payment receipts, and cancelled cheque",
+        "point_type": "document_request",
+        "decision": "covered",
+        "needed_doc_types": [],
+        "covered_doc_types": [
+          "discharge_summary",
+          "payment_receipts",
+          "bank_proof"
+        ]
+      }
+    ]
+  },
+  "L05": {
+    "letter_id": "L05",
+    "patient_code": "PT-0003",
+    "claim_ref": "CLM-CH-67211",
+    "insurer_name": "Care Health Insurance",
+    "pdf_file": "data\\seed_generated\\letters\\L05.pdf",
+    "expected_points": [
+      {
+        "ordinal": 1,
+        "normalized_ask": "Provide supporting documents for medical necessity",
+        "point_type": "document_request",
+        "decision": "needs_new_document",
+        "needed_doc_types": [
+          "doctor_note_treatment"
+        ]
+      }
+    ]
+  },
+  "L06": {
+    "letter_id": "L06",
+    "patient_code": "PT-0003",
+    "claim_ref": "CLM-CH-67212",
+    "insurer_name": "Care Health Insurance",
+    "pdf_file": "data\\seed_generated\\letters\\L06.pdf",
+    "expected_points": [
+      {
+        "ordinal": 1,
+        "normalized_ask": "Explain 3-day delay in intimation of hospitalization",
+        "point_type": "clarification",
+        "decision": "needs_patient_clarification",
+        "needed_doc_types": []
+      }
+    ]
+  },
+  "L07": {
+    "letter_id": "L07",
+    "patient_code": "PT-0004",
+    "claim_ref": "CLM-IL-11891",
+    "insurer_name": "ICICI Lombard",
+    "pdf_file": "data\\seed_generated\\letters\\L07.pdf",
+    "expected_points": [
+      {
+        "ordinal": 1,
+        "normalized_ask": "Submit legible copy of laboratory reports",
+        "point_type": "document_request",
+        "decision": "needs_new_document",
+        "needed_doc_types": [
+          "lab_reports"
+        ]
+      },
+      {
+        "ordinal": 2,
+        "normalized_ask": "Submit doctor prescription slip",
+        "point_type": "document_request",
+        "decision": "needs_new_document",
+        "needed_doc_types": [
+          "prescriptions"
+        ]
+      }
+    ]
+  },
+  "L08": {
+    "letter_id": "L08",
+    "patient_code": "PT-0008",
+    "claim_ref": "CLM-CH-99881",
+    "insurer_name": "Care Health Insurance",
+    "pdf_file": "data\\seed_generated\\letters\\L08.pdf",
+    "expected_points": [
+      {
+        "ordinal": 1,
+        "normalized_ask": "Submit discharge summary, final hospital bill, and payment receipt",
+        "point_type": "document_request",
+        "decision": "covered",
+        "needed_doc_types": [],
+        "covered_doc_types": [
+          "discharge_summary",
+          "final_hospital_bill",
+          "payment_receipts"
+        ]
+      }
+    ]
+  },
+  "L09": {
+    "letter_id": "L09",
+    "patient_code": "PT-0005",
+    "claim_ref": "CLM-NB-99015",
+    "insurer_name": "Niva Bupa Health Insurance",
+    "pdf_file": "data\\seed_generated\\letters\\L09.pdf",
+    "expected_points": [
+      {
+        "ordinal": 1,
+        "normalized_ask": "Provide previous year policy schedule copy",
+        "point_type": "document_request",
+        "decision": "needs_new_document",
+        "needed_doc_types": [
+          "previous_policy"
+        ]
+      },
+      {
+        "ordinal": 2,
+        "normalized_ask": "Furnish signed Claim Form Part B",
+        "point_type": "document_request",
+        "decision": "needs_new_document",
+        "needed_doc_types": [
+          "claim_form"
+        ]
+      }
+    ]
+  },
+  "L10": {
+    "letter_id": "L10",
+    "patient_code": "PT-0006",
+    "claim_ref": "CLM-ST-77335",
+    "insurer_name": "Star Health Insurance",
+    "pdf_file": "data\\seed_generated\\letters\\L10.pdf",
+    "expected_points": [
+      {
+        "ordinal": 1,
+        "normalized_ask": "Submit cancelled cheque with printed name",
+        "point_type": "document_request",
+        "decision": "covered",
+        "needed_doc_types": [],
+        "covered_doc_types": [
+          "bank_proof"
+        ]
+      }
+    ]
+  },
+  "L11": {
+    "letter_id": "L11",
+    "patient_code": "PT-0007",
+    "claim_ref": "CLM-HE-55444",
+    "insurer_name": "HDFC ERGO General Insurance",
+    "pdf_file": "data\\seed_generated\\letters\\L11.pdf",
+    "expected_points": [
+      {
+        "ordinal": 1,
+        "normalized_ask": "Submit doctor treatment note and justification certificate",
+        "point_type": "document_request",
+        "decision": "needs_new_document",
+        "needed_doc_types": [
+          "doctor_note_treatment"
+        ]
+      },
+      {
+        "ordinal": 2,
+        "normalized_ask": "Submit chemist pharmacy bills",
+        "point_type": "document_request",
+        "decision": "needs_new_document",
+        "needed_doc_types": [
+          "pharmacy_bills"
+        ]
+      }
+    ]
+  },
+  "L12": {
+    "letter_id": "L12",
+    "patient_code": "PT-0003",
+    "claim_ref": "CLM-CH-67215",
+    "insurer_name": "Care Health Insurance",
+    "pdf_file": "data\\seed_generated\\letters\\L12.pdf",
+    "expected_points": [
+      {
+        "ordinal": 1,
+        "normalized_ask": "Submit final hospital bill showing patient name clearly",
+        "point_type": "document_request",
+        "decision": "needs_new_document",
+        "needed_doc_types": [
+          "final_hospital_bill"
+        ]
+      },
+      {
+        "ordinal": 2,
+        "normalized_ask": "Provide FIR or MLC report",
+        "point_type": "document_request",
+        "decision": "needs_new_document",
+        "needed_doc_types": [
+          "fir_mlc"
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,116 @@
+@import './styles/tokens.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: var(--font-body);
+    color: var(--cf-text);
+    background-color: var(--cf-bg);
+    scroll-behavior: smooth;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-head);
+    color: var(--cf-text);
+    letter-spacing: -0.02em;
+  }
+}
+
+/* Care.fi custom button base utilities */
+.cf-btn-primary {
+  background-color: var(--cf-violet-600);
+  color: #ffffff;
+  border-radius: var(--r-md);
+  font-family: var(--font-head);
+  font-weight: 500;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1.25rem;
+  transition: all 180ms ease;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+.cf-btn-primary:hover {
+  background-color: var(--cf-violet-700);
+}
+.cf-btn-primary:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--cf-plum-48);
+}
+.cf-btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.cf-btn-secondary {
+  background-color: #ffffff;
+  color: var(--cf-violet-600);
+  border: 1px solid var(--cf-border);
+  border-radius: var(--r-md);
+  font-family: var(--font-head);
+  font-weight: 500;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1.25rem;
+  transition: all 180ms ease;
+}
+.cf-btn-secondary:hover {
+  background-color: var(--cf-bg-2);
+  border-color: var(--cf-thistle);
+}
+.cf-btn-secondary:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--cf-plum-48);
+}
+
+.cf-card {
+  background-color: #ffffff;
+  border: 1px solid var(--cf-border-2);
+  border-radius: var(--r-md);
+  box-shadow: var(--shadow-card);
+  transition: all 180ms ease;
+}
+
+.cf-input {
+  border-radius: var(--r-sm);
+  border: 1px solid var(--cf-border);
+  background-color: #ffffff;
+  color: var(--cf-text);
+  font-family: var(--font-body);
+  transition: all 180ms ease;
+}
+.cf-input:focus {
+  outline: none;
+  border-color: var(--cf-steel);
+  box-shadow: 0 0 0 3px var(--cf-plum-48);
+}
+
+/* Ticker Animation for Login Page */
+@keyframes cf-marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.cf-animate-ticker {
+  display: flex;
+  width: 200%;
+  animation: cf-marquee 20s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cf-animate-ticker {
+    animation: none;
+  }
+  * {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}

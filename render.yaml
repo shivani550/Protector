@@ -1,0 +1,35 @@
+services:
+  - type: web
+    name: protector-patient-locker
+    env: docker
+    plan: standard
+    region: oregon
+    dockerfilePath: Dockerfile
+    healthCheckPath: /api/health
+    disk:
+      name: protector-storage
+      mountPath: /app/storage
+      sizeGB: 10
+    envVars:
+      - key: ENV
+        value: production
+      - key: DEMO_MODE
+        value: "true"
+      - key: SEED_ON_BOOT
+        value: "true"
+      - key: DELIVERY_MODE
+        value: live
+      - key: WHATSAPP_PROVIDER
+        value: twilio
+      - key: EMAIL_PROVIDER
+        value: smtp
+      - key: LLM_PROVIDER
+        value: anthropic
+      - key: DATA_KEY
+        generateValue: true
+      - key: JWT_SECRET
+        generateValue: true
+      - key: INSURER_API_KEY
+        generateValue: true
+      - key: DEMO_PASSWORD
+        value: DemoPass123!

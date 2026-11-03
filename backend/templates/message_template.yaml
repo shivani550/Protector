@@ -1,0 +1,70 @@
+version: 1
+name: query_response_v1
+whatsapp: |
+  Hello {patient_first_name}, this is {sender_name} about your insurance claim {claim_ref_masked}.
+  Your insurer ({insurer_name}) has asked for a few things. We already hold some of them.
+  Please send these to us:
+  {needed_list}
+  {covered_line}
+  Reply here with the files or upload them at {portal_link}. Need help? Call {helpline}.
+whatsapp_all_clear: |
+  Hello {patient_first_name}, your insurer ({insurer_name}) sent a query on claim {claim_ref_masked}.
+  Good news: we already have everything needed. You do not need to send anything.
+email_subject: "Action needed: documents for your claim {claim_ref_masked}"
+email_subject_all_clear: "Update on your claim {claim_ref_masked}: nothing needed from you"
+email_text: |
+  Dear {patient_first_name},
+
+  This is {sender_name} regarding your health insurance claim {claim_ref_masked} with {insurer_name}.
+  The insurer has reviewed your claim and requested additional documentation.
+
+  DOCUMENTS REQUIRED FROM YOU:
+  {needed_list}
+
+  {covered_line}
+
+  HOW TO SUBMIT:
+  You can upload these documents securely using your personalized link:
+  {portal_link}
+
+  If you have questions, please reach out to our team at {helpline}.
+
+  Warm regards,
+  {sender_name}
+email_html: |
+  <!DOCTYPE html>
+  <html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Action needed: documents for your claim {claim_ref_masked}</title>
+  </head>
+  <body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333333; margin: 0; padding: 20px; background-color: #f8fafc;">
+    <div style="max-width: 600px; margin: 0 auto; background: #ffffff; padding: 28px; border-radius: 8px; border: 1px solid #e2e8f0;">
+      <h2 style="color: #0f172a; margin-top: 0;">Claim Update: Action Needed</h2>
+      <p>Dear <strong>{patient_first_name}</strong>,</p>
+      <p>This is <strong>{sender_name}</strong> regarding your insurance claim <strong>{claim_ref_masked}</strong> with <strong>{insurer_name}</strong>.</p>
+      <p>The insurer has requested additional items to complete their claim assessment.</p>
+      
+      <div style="background-color: #fffbeb; border-left: 4px solid #f59e0b; padding: 14px; margin: 20px 0; border-radius: 4px;">
+        <h3 style="margin-top: 0; color: #92400e; font-size: 16px;">Required from you:</h3>
+        <p style="white-space: pre-line; margin-bottom: 0;">{needed_list}</p>
+      </div>
+
+      <div style="background-color: #f0fdf4; border-left: 4px solid #22c55e; padding: 14px; margin: 20px 0; border-radius: 4px;">
+        <p style="margin: 0; color: #166534; font-weight: 500;">{covered_line}</p>
+      </div>
+
+      <div style="text-align: center; margin: 30px 0;">
+        <a href="{portal_link}" style="background-color: #2563eb; color: #ffffff; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: bold; display: inline-block;">Upload Requested Documents</a>
+      </div>
+
+      <p style="font-size: 13px; color: #64748b; margin-top: 24px; border-top: 1px solid #e2e8f0; padding-top: 16px;">
+        Need help? Call our support desk at <strong>{helpline}</strong>.<br>
+        This is an automated notification from {sender_name}.
+      </p>
+    </div>
+  </body>
+  </html>
+needed_item: "{n}. {doc_label} - {reason}"
+covered_line: "Already with us (no need to send): {covered_labels}."

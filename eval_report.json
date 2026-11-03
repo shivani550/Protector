@@ -1,0 +1,10 @@
+{
+  "timestamp": "2026-11-02T08:31:52.914483+00:00",
+  "overall_status": "PASS",
+  "classification_accuracy": "100.0%",
+  "point_recall": "100.0%",
+  "point_precision": "100.0%",
+  "false_asks": 0,
+  "needed_doc_f1": "1.00",
+  "adversarial_score": "100.0%"
+}
