@@ -13,7 +13,7 @@ class Settings(BaseSettings):
 
     ENV: str = "development"
     PORT: int = 8000
-    PUBLIC_BASE_URL: str = "http://localhost:8000"
+    PUBLIC_BASE_URL: str = "http://localhost:5173"
     DEMO_MODE: bool = True
     SEED_ON_BOOT: bool = False
     WATCH_INBOX: bool = False
