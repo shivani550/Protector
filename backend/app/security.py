@@ -76,7 +76,7 @@ def create_signed_file_token(doc_id: str, user_id: str, ttl_seconds: int = 300) 
     raw_message = f"{doc_id}:{user_id}:{exp}".encode("utf-8")
     sig = hmac.new(settings.JWT_SECRET.encode("utf-8"), raw_message, hashlib.sha256).hexdigest()
     payload = f"{doc_id}|{user_id}|{exp}|{sig}"
-    return base64.urlsafe_b64encode(payload.encode("utf-8")).decode("utf-8")
+    return base64.urlsafe_b64encode(payload.encode("utf-8")).decode("utf-8").rstrip("=")
 
 
 def verify_signed_file_token(token_b64: str, expected_doc_id: str, expected_user_id: Optional[str] = None) -> bool:
@@ -107,12 +107,14 @@ def create_magic_upload_token(patient_id: str, query_letter_id: Optional[str] = 
     raw = f"{patient_id}:{query_letter_id or ''}:{exp}".encode("utf-8")
     sig = hmac.new(settings.JWT_SECRET.encode("utf-8"), raw, hashlib.sha256).hexdigest()
     payload = f"{patient_id}|{query_letter_id or ''}|{exp}|{sig}"
-    return base64.urlsafe_b64encode(payload.encode("utf-8")).decode("utf-8")
+    return base64.urlsafe_b64encode(payload.encode("utf-8")).decode("utf-8").rstrip("=")
 
 
 def verify_magic_upload_token(token_b64: str) -> Optional[Dict[str, Any]]:
     try:
-        raw = base64.urlsafe_b64decode(token_b64.encode("utf-8")).decode("utf-8")
+        # Re-add base64 padding that may have been stripped by URL routing
+        padded = token_b64 + "=" * (4 - len(token_b64) % 4)
+        raw = base64.urlsafe_b64decode(padded.encode("utf-8")).decode("utf-8")
         parts = raw.split("|")
         if len(parts) != 4:
             return None
